@@ -66,10 +66,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns && rm -rf feeds/packages/net/{alist,adguardhome,smartdns}
-
-    - name: Update Golang
-      run: cd openwrt && rm -rf feeds/packages/lang/golang && git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+      run: cd openwrt && ./scripts/feeds update -a 
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
